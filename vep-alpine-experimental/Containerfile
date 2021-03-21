@@ -8,9 +8,7 @@ RUN cd /kent/src/lib && make
 
 ENV KENT_SRC=/kent/src
 
-RUN cpanm Archive::Zip
-RUN cpanm DBI
-RUN cpanm JSON
+RUN cpanm Archive::Zip DBI JSON
 RUN cpanm DBD::mysql
 RUN cpanm Set::IntervalTree
 RUN cpanm PerlIO::gzip
