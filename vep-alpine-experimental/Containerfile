@@ -8,12 +8,11 @@ RUN cd /kent/src/lib && make
 
 ENV KENT_SRC=/kent/src
 
-RUN cpanm Archive::Zip DBI JSON
+RUN cpanm Archive::Zip DBI JSON Test::Warnings
 RUN cpanm DBD::mysql
 RUN cpanm Set::IntervalTree
 RUN cpanm PerlIO::gzip
 RUN cpanm Bio::DB::BigFile
-RUN cpanm Test::Warnings
 
 RUN git clone --depth 1 https://github.com/Ensembl/ensembl-vep.git
 RUN cd ensembl-vep && perl INSTALL.pl
