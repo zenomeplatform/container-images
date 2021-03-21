@@ -13,7 +13,6 @@ RUN cpanm DBD::mysql
 RUN cpanm Set::IntervalTree
 RUN cpanm PerlIO::gzip
 RUN cpanm Bio::DB::BigFile
-RUN cpanm HTTP::Tiny
 RUN cpanm Test::Warnings
 
 RUN git clone --depth 1 https://github.com/Ensembl/ensembl-vep.git
