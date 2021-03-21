@@ -1,0 +1,19 @@
+FROM alpine
+
+RUN apk add curl perl perl-dev perl-utils perl-app-cpanminus wget make build-base git mariadb mariadb-dev perl-xml-libxml libbz2 expat-dev db db-dev bzip2-dev xz-dev
+
+RUN wget http://hgdownload.cse.ucsc.edu/admin/jksrc.zip & unzip jksrc.zip& cd kent/src/lib & make & cd .. & export KENT_SRC=`pwd`
+
+RUN cpanm Archive::Zip
+RUN cpanm DBI
+RUN cpanm JSON
+RUN cpanm DBD::mysql
+RUN cpanm Set::IntervalTree
+RUN cpanm PerlIO::gzip
+RUN cpanm Bio::DB::BigFile
+RUN cpanm HTTP::Tiny
+RUN cpanm Test::Warnings
+
+RUN git clone --depth 1 https://github.com/Ensembl/ensembl-vep.git
+cd ensembl-vep
+perl INSTALL.pl
