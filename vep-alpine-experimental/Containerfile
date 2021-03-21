@@ -1,10 +1,9 @@
 FROM alpine
 
-RUN apk add curl perl perl-dev perl-utils perl-app-cpanminus wget make build-base git mariadb mariadb-dev perl-xml-libxml libbz2 expat-dev db db-dev bzip2-dev xz-dev
+RUN apk add curl perl perl-dev perl-utils perl-app-cpanminus wget make build-base git mariadb mariadb-dev perl-xml-libxml libbz2 expat-dev db db-dev bzip2-dev xz-dev libpng-dev util-linux-dev
 
 RUN wget http://hgdownload.cse.ucsc.edu/admin/jksrc.zip
 RUN unzip jksrc.zip 
-RUN apk add libpng-dev util-linux-dev
 RUN cd /kent/src/lib && make
 
 ENV KENT_SRC=/kent/src
