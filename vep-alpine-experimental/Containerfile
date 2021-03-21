@@ -4,7 +4,8 @@ RUN apk add curl perl perl-dev perl-utils perl-app-cpanminus wget make build-bas
 
 RUN wget http://hgdownload.cse.ucsc.edu/admin/jksrc.zip
 RUN unzip jksrc.zip 
-RUN cd kent/src/lib && make
+RUN apk add libpng-dev util-linux-dev
+RUN cd /kent/src/lib && make
 
 ENV KENT_SRC=/kent/src
 
