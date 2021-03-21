@@ -20,5 +20,4 @@ RUN cpanm HTTP::Tiny
 RUN cpanm Test::Warnings
 
 RUN git clone --depth 1 https://github.com/Ensembl/ensembl-vep.git
-cd ensembl-vep
-perl INSTALL.pl
+RUN cd ensembl-vep && perl INSTALL.pl
